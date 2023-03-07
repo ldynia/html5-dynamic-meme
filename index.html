@@ -1,83 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>Change me!</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <style media="screen">
-    body {
-      background: #101010;
-    }
-
-    img {
-      width: 100%;
-    }
-
-    .container {
-      position: relative;
-      color: white;
-    }
-
-    .header {
-      position: fixed;
-      text-align: center;
-      background: rgb(0, 0, 0);
-      background: rgba(0, 0, 0, 0.6);
-      font-weight: bold;
-      padding: 3px;
-      top: 2%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .footer {
-      position: absolute;
-      text-align: center;
-      background: rgb(0, 0, 0);
-      background: rgba(0, 0, 0, 0.7);
-      font-weight: bold;
-      padding: 3px;
-      left: 50%;
-      top: 85%;
-      transform: translate(-50%, -50%);
-    }
-  </style>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      skills = [
-        'I CAN: PROCRASTINATE',
-        'I CAN: SEQUENCE POTATOS',
-        'I CAN: PLEASE YOUR MOTHER',
-        'I CAN: WIN WITH CHUCK NORRIS',
-        'I CAN: MAKE AN ICE',
-        'I CAN: CATCH A GIPSY',
-        'I CAN: DO CHA CHA',
-      ]
-      var skill = skills[Math.floor(Math.random() * skills.length)];
-
-      var init = sessionStorage.getItem('init');
-      if (init == null) {
-        $('.footer').text("PLEASE RELOAD THE PAGE 'Ctrl+ R'");
-        sessionStorage.setItem('init', 'init');
-      } else {
-        $('.footer').text(skill);
+  <head>
+    <title>Dynamic Meme Generator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style media="screen">
+      body {
+        background: #05180a;
       }
 
-    });
-  </script>
-</head>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-<body>
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
 
-  <div class="container">
-    <h2 class="header">I HAVE PARTICULAR SET OF SKILLS</h2>
-    <img class="center-block" src="https://i.kinja-img.com/gawker-media/image/upload/s--yukX50Yp--/c_scale,f_auto,fl_progressive,q_80,w_800/c4qer9xpexe49qc2rnz5.png" alt="Liam Says">
-    <h3 class="footer">I CAN: TODO</h3>
-  </div>
+      figcaption {
+        position: flex;
+        text-align: center;
+        background: rgba(255, 0, 0, 0.5);
+        font-weight: bold;
+        color: white;
+        font-size: 16pt;
+      }
 
-</body>
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        skills = [
+          'I CAN PROCRASTINATE',
+          'I CAN SEQUENCE POTATOS',
+          'I CAN PLEASE YOUR MOTHER',
+          'I CAN WIN WITH CHUCK NORRIS',
+          'I CAN MAKE AN ICE',
+          'I CAN CATCH A GIPSY',
+          'I CAN DO CHA CHA',
+        ]
+        var skill = skills[Math.floor(Math.random() * skills.length)];
+
+        var init = sessionStorage.getItem('init');
+        if (init == null) {
+          $('.footer').text("PLEASE RELOAD THE PAGE 'Ctrl+ R'");
+          sessionStorage.setItem('init', 'init');
+        } else {
+          $('.footer').text(skill);
+        }
+
+      });
+    </script>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <figure>
+        <figcaption class="header">I HAVE PARTICULAR SET OF SKILLS</figcaption>
+        <img src="https://i.kinja-img.com/gawker-media/image/upload/s--yukX50Yp--/c_scale,f_auto,fl_progressive,q_80,w_800/c4qer9xpexe49qc2rnz5.png" alt="Liam Says">
+        <figcaption class="footer">Caption goes here</figcaption>
+      </figure>
+    </div>
+
+  </body>
 
 </html>
